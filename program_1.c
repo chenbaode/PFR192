@@ -8,7 +8,10 @@ int main(void)
     double result = 0;
 
     printf("Enter a simple expression containing one of four operators +, -, *, /");
-    scanf(" %lf %c %lf", &num1, &op, &num2);
+    if (scanf(" %lf %c %lf", &num1, &op, &num2) != 3) {
+        printf("Invalid input\n");
+        return 1;
+    }
     
     switch (op) {
         case '+':
