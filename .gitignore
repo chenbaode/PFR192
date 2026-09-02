@@ -1,0 +1,9 @@
+# Rác của macOS và của IDE
+.DS_Store
+.idea/
+.vscode/
+cmake-build-*/
+
+# Bỏ file thực thi và .dSYM, chỉ giữ lại mã nguồn
+Program_*
+!Program_*.c
