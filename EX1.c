@@ -9,11 +9,20 @@ void printEven(int a[], int n);
 
 int main(void) {
     int n;
-    int *pn = &n;
-    int *a = calloc(100, sizeof(int));
+    int *a = calloc(MAXN, sizeof(int));
+    if (a == NULL) {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
 
     printf("Enter an integer array that may contains 100. The input will terminate when enters zero: ");
-    input(a, pn);
+    input(a, &n);
+
+    if (n == 0) {
+        printf("Empty array\n");
+        free(a);
+        return 0;
+    }
 
     printf("Max value: %d\n", max(a, n));
     printf("Inputted array: ");
@@ -25,7 +34,6 @@ int main(void) {
 }
 
 void input(int a[], int *pn) {
-    printf("Enter integer array: ");
     int n = 0;
     scanf("%d", &n);
     int count = 0;
