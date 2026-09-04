@@ -16,7 +16,6 @@ int main() {
     print(a, n);
     printf("\nEven values in array: ");
     printEven(a, n);
-    printEven(a, n);
     while (getchar() != '\n') {
         getchar();
     }
