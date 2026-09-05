@@ -6,17 +6,18 @@ void ascSelectionSort (int *a, int n) {
     for (i = 0; i < n-1; i++) {
         minIndex = i;
         for (j = i + 1; j < n; j++) {
-            if (a[minIndex] > a[j]) {
+            if (a[j] < a[minIndex]) {
                 minIndex = j;
             }
-            if (minIndex > i) {
+        }
+        if (minIndex > i) {
                 int t = a[minIndex];
                 a[minIndex] = a[i];
                 a[i] = t;
-            }
         }
     }
 }
+
 
 void print (int *a, int n) {
     int i;
